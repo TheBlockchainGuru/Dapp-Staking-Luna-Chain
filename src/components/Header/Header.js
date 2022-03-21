@@ -157,10 +157,9 @@ const Header = () => {
                 </Box>
                 <TabsList>
                 {pages.map((page) => (
-                  <Link to={page.route} style={{ textDecoration: 'none' }}>
+                  <Link key={page.title} to={page.route} style={{ textDecoration: 'none' }}>
                     <Tab
                       value={page.title}
-                      key={page.title}
                       label={page.title}
                       sx={{ color: '#656665', fontSize: 16, fontWeight: 700 }} 
                       // onClick={handleCloseNavMenu}
