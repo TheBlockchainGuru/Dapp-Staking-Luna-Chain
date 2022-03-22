@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Mypage from './pages/Mypage/Mypage';
-import Ttust from './pages/Ttust/Ttust';
+import Utility from './pages/Utility/Utility';
 import Earn from './pages/Earn/Earn';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/earn" element={<Earn />} />
-          <Route path="/ttust" element={<Ttust />} />
+          <Route path="/utility" element={<Utility />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,39 +1,50 @@
-import { Box, Chip, Stack, Typography, Slider } from "@mui/material";
+import { Box, Chip, Stack, Typography, Slider, Divider } from "@mui/material";
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
-const StakeBox = () => {
+const StakeBox = (props) => {
     return (
-        <Box bgcolor="#f3f3f5" borderRadius="20px" flex="auto" p={4}>
-            <Stack>
-                <Typography fontWeight={700} fontSize={24}>UST</Typography>
+        <Box bgcolor="#212121" pt={3.5} pb={4.5} px={6} borderRadius={3} flex="auto">
+            <Stack flexDirection="row" alignItems="center" gap={1}>
+                <img src={props.image} style={{ width: 80, height: 80 }} />
+                <Box>
+                    <Typography component="div" fontFamily="SF Pro" lineHeight="unset" fontWeight={860} fontSize={36} color="#FFFFFF">UST</Typography>
+                    <Stack flexDirection="row" alignItems="center" gap={1}>
+                        <Typography fontFamily="SF Pro" fontWeight={860} fontSize={13} color="#CEC0C0" textTransform="uppercase" lineHeight="unset">Interest</Typography>
+                        <ErrorOutlineIcon sx={{ fontSize: 16, color: "#CEC0C0" }} />
+                    </Stack>
+                </Box>
             </Stack>
-            <Stack>
-                <Typography fontSize={12}>INTEREST</Typography>
+            <Stack alignItems="center" pt={4.5}>
+                <Chip label="APY" sx={{ bgcolor: '#493C3C', color: '#CEC0C0', px: 2.5, fontSize: 13 }} />
             </Stack>
-            <Stack alignItems="center">
-                <Chip label="APY" sx={{ bgcolor: '#FFFFFF', px: 2 }} />
+            <Stack alignItems="center" justifyContent="center" flexDirection="row" pt={2} gap={1}>
+                <Typography fontFamily="SF Pro" fontSize={36} fontWeight={860} textAlign="center" lineHeight="unset" color="#FFFFFF">{ props.percent }</Typography>
+                <Typography fontFamily="SF Pro" fontSize={36} fontWeight={860} textAlign="center" lineHeight="unset" color="#FFFFFF">%</Typography>
             </Stack>
-            <Typography fontSize={48} fontWeight={700} textAlign="center" pt={1} color="#4ada4b">34.87%</Typography>
             <Slider 
                 defaultValue={50} 
                 aria-label="Default" 
                 valueLabelDisplay="auto"
                 sx={{
-                    color: '#76d75f',
+                    color: '#F9D85E',
                     py: 20,
                     '& .MuiSlider-rail': {
-                        opacity: 0,
+                        // opacity: 0,
                     }
                 }}
             />
-            <Stack alignItems="center">
-                <Chip label="STAKE UST NOW!" 
+            <Divider sx={{ borderColor: '#434040' }} />
+            <Stack alignItems="center" pt={4}>
+                <Chip label={"Stake your " + props.title + " now!"}
                     clickable={true}
                     sx={{ 
-                        bgcolor: '#2c2c2c', 
+                        bgcolor: '#493C3C', 
                         color: '#FFFFFF', 
-                        px: 2,
-                        fontSize: 10,
+                        fontSize: 13,
                         px: 12,
+                        py: 3,
+                        borderRadius: 40,
+                        textTransform: 'uppercase'
                     }} />
             </Stack>
         </Box>

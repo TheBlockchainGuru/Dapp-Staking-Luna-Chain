@@ -57,17 +57,9 @@ const data = {
 
 const EcosystemBox = () => {
     return (
-        <Box textTransform="uppercase" bgcolor="#FFFFFF" borderRadius="20px" p="60px">
+      <Box bgcolor="#212121" pt={7.5} pb={8} px={6} borderRadius={3}>
             <Stack flexDirection="row" alignItems="center">
-                <Typography fontWeight="900">Tvl of the entire ecosystem</Typography>
-                <Chip 
-                    label={"-0.91%"}
-                    sx={{ bgcolor: 'red', color: '#FFFFFF' }}
-                />
-            </Stack>
-            <Stack>
-                <Typography>525,338,753,538</Typography>
-                <Typography>UST</Typography>
+                <Typography fontWeight="900" fontSize={20} color="#FFFFFF" textTransform="uppercase" fontFamily="SF Pro">Tvl of the entire ecosystem</Typography>
             </Stack>
             <Box>
                 <Line options={options} data={data} />

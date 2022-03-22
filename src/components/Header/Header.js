@@ -35,15 +35,16 @@ const blue = {
 };
 
 const Tab = styled(TabUnstyled)`
-  font-family: IBM Plex Sans, sans-serif;
   cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: bold;
+  font-family: SF pro;
+  font-size: 20px;
+  font-weight: 860;
+  line-height: 120%;
   background-color: transparent;
   width: 100%;
   padding: 12px 16px;
   border: none;
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 20px;
   display: flex;
   color: #666566;
 
@@ -52,13 +53,13 @@ const Tab = styled(TabUnstyled)`
   }
 
   &:focus {
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 20px;
     color: #fff;
   }
 
   &.${tabUnstyledClasses.selected} {
-    background-color: #eeefee;
-    color: #000000;
+    background-color: #212121;
+    color: #FFFFFF;
   }
 
   &.${buttonUnstyledClasses.disabled} {
@@ -75,7 +76,7 @@ const TabPanel = styled(TabPanelUnstyled)`
 
 const TabsList = styled(TabsListUnstyled)`
   min-width: 480px;
-  background-color: #000000;
+  background-color: #0B0B0B;
   border-radius: 8px;
   display: flex;
   align-items: flex-end;
@@ -86,7 +87,7 @@ const pages = [
   { title: 'DASHBOARD', route: '/' }, 
   { title: 'MY PAGE', route: '/mypage' },
   { title: 'EARN', route: 'earn' }, 
-  { title: 'TTUST', route: 'ttust' }
+  { title: 'UTILITY +', route: 'utility' }
 ];
 
 const Header = () => {
@@ -110,7 +111,7 @@ const Header = () => {
   }
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#000000', boxShadow: 'none' }}>
+    <AppBar position="fixed" sx={{ bgcolor: '#0B0B0B', boxShadow: 'none' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ alignItems: 'flex-end' }}>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -150,11 +151,8 @@ const Header = () => {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }}>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, pt: 6.25 }}>
               <TabsUnstyled defaultValue={'DASHBOARD'}>
-                <Box sx={{ flexGrow: 1, pb: 1, pt: 2, display: { xs: 'none', md: 'block' } }} >
-                  <img src={LogoImage} style={{ verticalAlign: 'middle' }} />
-                </Box>
                 <TabsList>
                 {pages.map((page) => (
                   <Link key={page.title} to={page.route} style={{ textDecoration: 'none' }}>
@@ -178,14 +176,14 @@ const Header = () => {
             <Chip 
               icon={
                 <>
-                  <AccountBalanceWalletOutlinedIcon sx={{ color: '#4ada4a !important' }} />
+                  <AccountBalanceWalletOutlinedIcon sx={{ color: '#F9D85E !important', fontSize: 20 }} />
                 </>
               } 
               clickable={true}
               onClick={onConnect}
               label="Connect Wallet"  
               variant="outlined" 
-              sx={{ color: '#4ada4a', py: '20', borderColor: '#4ada4a', px: 2, mb: 1 }} 
+              sx={{ color: '#F9D85E', py: 1.5, borderColor: '#F9D85E', px: 2.5, mb: 1 }} 
             />
           </Box>
         </Toolbar>
